@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Download Page</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script>
+      const user = sessionStorage.getItem('user');
+      if(!user)
+      {
+        window.location.href='http://buds2software.com';
+      }
+
+     
+  </script>
+</head>
+<body>
+
+     <h4>Download Links:</h4>
+     <ul>
+         <li>
+             <a href="#">Sample 1</a>
+         </li>
+     </ul>
+</body>
+</html>
