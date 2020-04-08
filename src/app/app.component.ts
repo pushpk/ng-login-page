@@ -26,7 +26,16 @@ export class AppComponent implements OnInit {
 
       }
       else{
-        window.location.href='http://buds2software.com';
+       
+        // if(window.location.href != "http://localhost:4200/")
+        // {
+        //  window.location.href='http://localhost:4200/';
+        // }
+
+        if(window.location.href != "http://buds2software.com")
+        {
+         window.location.href='http://buds2software.com';
+        }
       }
 
  }
