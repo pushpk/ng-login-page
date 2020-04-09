@@ -32,9 +32,10 @@ export class AppComponent implements OnInit {
         //  window.location.href='http://localhost:4200/';
         // }
 
-        if(window.location.href != "http://buds2software.com")
+        
+        if(window.location.href != "http://downloads.buds2software.com/") 
         {
-         window.location.href='http://buds2software.com';
+         window.location.href='http://downloads.buds2software.com/';
         }
       }
 
@@ -46,6 +47,8 @@ export class AppComponent implements OnInit {
     const sn = form.value.SerialNumber;
 //?email=lacey@torx.com&sn=100017730
     this.http.get("http://downloads.buds2software.com/api/values", { responseType: 'text', observe: 'response', params: { email: this.email, sn: sn } }).subscribe((data) => {
+      console.log(data);  
+      console.log(data.status);
  
         this.incorrectCreds = false;
         
