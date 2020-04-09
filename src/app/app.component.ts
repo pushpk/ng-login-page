@@ -21,8 +21,8 @@ export class AppComponent implements OnInit {
  ngOnInit(){
       const user = sessionStorage.getItem('userName');
       if(user){
-        this.isUserAuthenticated = true
-        window.location.href='http://downloads.buds2software.com/download.html';
+       this.isUserAuthenticated = true
+       window.location.href='http://downloads.buds2software.com/download.html';
 
       }
       else{
@@ -45,19 +45,17 @@ export class AppComponent implements OnInit {
     this.email = form.value.Email;
     const sn = form.value.SerialNumber;
 //?email=lacey@torx.com&sn=100017730
-    this.http.get("http://buds2software.com/api/values", { responseType: 'text', observe: 'response', params: { email: this.email, sn: sn } }).subscribe((data) => {
-      console.log(data);  
-      console.log(data.status);
+    this.http.get("http://downloads.buds2software.com/api/values", { responseType: 'text', observe: 'response', params: { email: this.email, sn: sn } }).subscribe((data) => {
  
         this.incorrectCreds = false;
         
         console.log(data); 
         sessionStorage.setItem('isUserAuthenticated', 'true');
         sessionStorage.setItem('userName', sn);
+        sessionStorage.setItem('ln', data.body);
         
         window.location.href='http://downloads.buds2software.com/download.html';
  
-
     }, (error) => {
 
       this.incorrectCreds = true;
